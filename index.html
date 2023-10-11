@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ShutterEroz</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <input type="checkbox" name id="check">
+
+            <div class="logo-container">
+                <h3 class="logo">Shutter<span>Eroz</span></h3>
+            </div>
+
+            <div class="nav-btn">
+                <div class="nav-links">
+                    <ul>
+                        <li class="nav-link" style="--i: .6s">
+                            <a href="#">Home</a>
+                        </li>
+
+                        <li class="nav-link" style="--i: 1.1s">
+                            <a href="#photo-gallery">Photos</a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="log-sign" style="--i: 1.8s">
+                    <a href="tel:0788280176" class="btn transparent">Contacter</a>
+                </div>
+            </div>
+
+            <div class="hamburger-menu-container">
+                <div class="hamburger-menu">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <h1 class="linetext">Decouvrir nos photos</h1>
+            <h2 class="linetext2"> Explorez un safari visuel époustouflant
+                où la beauté de la faune se dévoile dans toute sa splendeur,
+                capturée avec expertise et passion.</h2>
+            <section id="section02" class="demo">
+                <a href="#photo-gallery"><span></span></a>
+            </section>
+            <div class="overlay"></div>
+        </section>
+
+        <section class="section1" id='#photos'>
+            <h1 class="linetitre">Instant Sauvage : L'essence captivante de
+                la vie animale</h1>
+            <h2 class="linetitre2">Explorez la beauté indomptée de la
+                nature, plongez au cœur des moments uniques et découvrez la
+                puissance et la grâce des habitants sauvages de notre
+                planète.</h2>
+
+            <section class="photo-gallery" id="photo-gallery">
+              <!-- <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "shuttereroz";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Échec de la connexion à la base de données : " . $conn->connect_error);
+                }
+
+                $sql = "SELECT photo_name, photo_price, photo_path, id FROM photos";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $photoName = $row["photo_name"];
+                        $photopath = $row["photo_path"];
+                        $photoPrice = $row["photo_price"];
+                        $photoId = $row["id"];
+
+                        echo '<div class="photo-card">';
+                        echo '<a href="photo_details.php?id=' . $photoId . '">';
+                        echo '<div class="photo-image">';
+                        echo '<img src="' . $photopath . '" alt="' . $photoName . '">';
+                        echo '</div>';
+                        echo '</a>';
+                        echo '<div class="photo-details">';
+                        echo '<h3 class="photo-name">' . $photoName . '</h3>';
+                        echo '<p class="photo-price">' . $photoPrice . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "Aucune photo trouvée dans la base de données.";
+                }
+
+                $conn->close();
+                ?>--> 
+
+                <div class="photo-card">
+                    <a href="photo_details.php?id=1">
+                        <div class="photo-image">
+                            <img src="./photo/tigre.jpg" alt="Tigre">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Tigre</h3>
+                        <p class="photo-price">$10.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=2">
+                        <div class="photo-image">
+                            <img src="./photo/renard.jpg" alt="Renard">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Renard</h3>
+                        <p class="photo-price">$8.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=3">
+                        <div class="photo-image">
+                            <img src="./photo/ouistiti.jpg" alt="Ouistiti">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Ouistiti</h3>
+                        <p class="photo-price">$6.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=4">
+                        <div class="photo-image">
+                            <img src="./photo/oiseau2.jpeg" alt="Oiseau 2">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Oiseau 2</h3>
+                        <p class="photo-price">$12.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=5">
+                        <div class="photo-image">
+                            <img src="./photo/oiseau.jpg" alt="Oiseau">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Oiseau</h3>
+                        <p class="photo-price">$7.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=6">
+                        <div class="photo-image">
+                            <img src="./photo/chat.jpg" alt="Chat">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Chat</h3>
+                        <p class="photo-price">$9.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=7">
+                        <div class="photo-image">
+                            <img src="./photo/cerf.jpg" alt="Cerf">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Cerf</h3>
+                        <p class="photo-price">$11.99</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <a href="photo_details.php?id=8">
+                        <div class="photo-image">
+                            <img src="./photo/cameleon.jpg" alt="Caméléon">
+                        </div>
+                    </a>
+                    <div class="photo-details">
+                        <h3 class="photo-name">Caméléon</h3>
+                        <p class="photo-price">$14.99</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="contact">
+                <h3>Nous Contacter :</h3>
+                <h4>Phone number</h4>
+                <h4>Made by Eroz</h4>
+
+
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
